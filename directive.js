@@ -1,19 +1,21 @@
+'use strict';
+
 angular.module('mlg-wms-erp-title', [])
-  .directive('mlgWmsErpTitle', function ($http) {
+  .directive('mlgWmsErpTitle', function () {
     var directiveDefinitionObject = {
-      restrict:   'AE',
+      restrict:   'E',
       scope:      {
-        defaultID: '@mlgWmsErpTitle'
+        defaultID: '@id'
       },
       template:   '<span>{{title}}</span>',
-      controller: function ($scope, $http) {
+      controller: ['$scope', '$http', function ($scope, $http) {
         var nodeID = $scope.defaultID;
         $http.get('/b/api/boutique/MobileERP/' + nodeID)
           .success(function (response) {
             $scope.title = response.pageHeader || response.button;
-            $scope.title = $scope.title + ' ' + nodeID;
+            $scope.title = $scope.title + ' | ' + nodeID;
           });
-      }
+      }]
     }
     return directiveDefinitionObject;
   });
