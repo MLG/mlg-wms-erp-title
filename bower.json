@@ -1,0 +1,20 @@
+{
+  "name": "mlg-wms-erp-title",
+  "version": "0.0.1",
+  "homepage": "https://github.com/MLG/mlg-wms-erp-title",
+  "authors": [
+    "Eugene OZ <normandiggs@gmail.com>"
+  ],
+  "main": "directive.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "no license",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
